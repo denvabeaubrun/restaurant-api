@@ -23,6 +23,9 @@ app.get('/restaurants/:id', (req, res) => {
   if (!restaurant) return res.status(404).json({ error: 'Restaurant not found' });
   res.json(restaurant);
 });
+app.get('/', (req, res) => {
+  res.redirect('/restaurants');
+});
 
 // POST new restaurant
 app.post('/restaurants', (req, res) => {
